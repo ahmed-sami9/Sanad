@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "title": "Sanad",
+    "description": "A calm peer-support community for people living with chronic conditions."
+  },
+  "common": {
+    "brand": "Sanad",
+    "joinShort": "Join",
+    "join": "Join the community",
+    "tryDemo": "Try the demo",
+    "signIn": "Sign in"
+  },
+  "landing": {
+    "nav": {
+      "label": "Main",
+      "communities": "Communities",
+      "stories": "Stories",
+      "howItWorks": "How it works",
+      "safety": "Safety center",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
+    },
+    "hero": {
+      "badge": "A peer-support community",
+      "title": "You’re not alone on this journey.",
+      "subtitle": "Sanad is a calm space for people living with chronic conditions to share their stories, find others who understand, and get through the hard days together.",
+      "demoHint": "No sign-up, one click",
+      "readStories": "Read stories first",
+      "socialProof": "People sharing and listening every day.",
+      "imageAlt": "A woman with her eyes closed, resting peacefully among leaves under a warm sun"
+    },
+    "howItWorks": {
+      "title": "A little support, in your own way",
+      "checkIn": {
+        "title": "Check in daily",
+        "body": "Say how you’re feeling in seconds. Private by default."
+      },
+      "share": {
+        "title": "Share your story",
+        "body": "Write about a hard stretch or a small win. Others respond with <em>I relate</em> or <em>Sending support</em>."
+      },
+      "circle": {
+        "title": "Find your circle",
+        "body": "Join communities around shared experiences and chat live with people who understand."
+      }
+    },
+    "stories": {
+      "eyebrow": "Stories worth sharing",
+      "title": "Real journeys, told by the people living them.",
+      "browseAll": "Browse all stories",
+      "readTime": "{minutes} min read",
+      "relate": "I relate · {count}",
+      "support": "Sending support · {count}",
+      "items": {
+        "maya": {
+          "name": "Maya",
+          "condition": "Living with Crohn’s",
+          "title": "The year I stopped apologizing for cancelled plans",
+          "excerpt": "I used to explain every change of plan. Slowly, I learned that resting needs no apology."
+        },
+        "omar": {
+          "name": "Omar",
+          "condition": "Living with chronic pain",
+          "title": "A small walk, a bigger victory",
+          "excerpt": "Some days, progress looks different. Today, it was getting outside for ten quiet minutes."
+        },
+        "lina": {
+          "name": "Lina",
+          "condition": "Living with fatigue",
+          "title": "Finding people who understand",
+          "excerpt": "I didn’t need someone to fix everything. I needed someone who understood the hard days."
+        }
+      }
+    },
+    "conversations": {
+      "title": "Small conversations can make a big difference.",
+      "subtitle": "A place to share, to listen, and to feel understood.",
+      "imageAlt": "Two cups of tea on a sunlit wooden table beside a window"
+    },
+    "communities": {
+      "title": "Find your people",
+      "subtitle": "Explore welcoming communities built around shared experiences, where you can connect, learn, and feel less alone.",
+      "members": "{count} members",
+      "online": "{count} online",
+      "explore": "Explore community",
+      "items": {
+        "chronicPain": {
+          "name": "Chronic Pain",
+          "description": "A supportive space to share experiences, tips, and what helps, offered by people who get it."
+        },
+        "crohns": {
+          "name": "Crohn’s & IBD",
+          "description": "A welcoming community to talk about daily life, treatment experiences, and navigating ups and downs together."
+        },
+        "wellbeing": {
+          "name": "Mental Wellbeing",
+          "description": "A kind, understanding space to talk about the emotional side of living with a chronic condition."
+        }
+      }
+    },
+    "safety": {
+      "eyebrow": "Built with care",
+      "title": "A safe space comes first.",
+      "subtitle": "Sanad is for peer support and shared experience. It never replaces your doctor.",
+      "penName": {
+        "title": "Go by a pen name",
+        "body": "Share without your real identity."
+      },
+      "experience": {
+        "title": "Experience, not prescriptions",
+        "body": "Stories are personal, never medical advice."
+      },
+      "report": {
+        "title": "Report and block",
+        "body": "Step away from anything that feels wrong."
+      },
+      "visibility": {
+        "title": "You control visibility",
+        "body": "Private, circle-only, or public."
+      }
+    },
+    "cta": {
+      "title": "You don’t have to do this alone.",
+      "subtitle": "Find understanding, one conversation at a time."
+    },
+    "footer": {
+      "tagline": "A place to feel understood.",
+      "label": "Footer",
+      "about": "About",
+      "guidelines": "Community guidelines",
+      "privacy": "Privacy",
+      "contact": "Contact",
+      "copyright": "© {year} Sanad. A portfolio project by Ahmed. Not a medical service."
+    }
+  }
+}
