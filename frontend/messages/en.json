@@ -18,7 +18,8 @@
       "howItWorks": "How it works",
       "safety": "Safety center",
       "openMenu": "Open menu",
-      "closeMenu": "Close menu"
+      "closeMenu": "Close menu",
+      "memberPrompt": "Already a member? <link>Sign in</link>"
     },
     "hero": {
       "badge": "A peer-support community",
@@ -27,7 +28,8 @@
       "demoHint": "No sign-up, one click",
       "readStories": "Read stories first",
       "socialProof": "People sharing and listening every day.",
-      "imageAlt": "A woman with her eyes closed, resting peacefully among leaves under a warm sun"
+      "imageAlt": "A woman with her eyes closed, resting peacefully among leaves under a warm sun",
+      "socialProofLabel": "Members of the Sanad community"
     },
     "howItWorks": {
       "title": "A little support, in your own way",
@@ -48,55 +50,23 @@
       "eyebrow": "Stories worth sharing",
       "title": "Real journeys, told by the people living them.",
       "browseAll": "Browse all stories",
-      "readTime": "{minutes} min read",
+      "readTime": "{minutes, plural, one {# min read} other {# min read}}",
       "relate": "I relate · {count}",
       "support": "Sending support · {count}",
-      "items": {
-        "maya": {
-          "name": "Maya",
-          "condition": "Living with Crohn’s",
-          "title": "The year I stopped apologizing for cancelled plans",
-          "excerpt": "I used to explain every change of plan. Slowly, I learned that resting needs no apology."
-        },
-        "omar": {
-          "name": "Omar",
-          "condition": "Living with chronic pain",
-          "title": "A small walk, a bigger victory",
-          "excerpt": "Some days, progress looks different. Today, it was getting outside for ten quiet minutes."
-        },
-        "lina": {
-          "name": "Lina",
-          "condition": "Living with fatigue",
-          "title": "Finding people who understand",
-          "excerpt": "I didn’t need someone to fix everything. I needed someone who understood the hard days."
-        }
-      }
+      "reactionsLabel": "{relate} people relate, {support} sent support"
     },
     "conversations": {
-      "title": "Small conversations can make a big difference.",
+      "title": "It helps to talk with someone who’s been there.",
       "subtitle": "A place to share, to listen, and to feel understood.",
       "imageAlt": "Two cups of tea on a sunlit wooden table beside a window"
     },
     "communities": {
       "title": "Find your people",
       "subtitle": "Explore welcoming communities built around shared experiences, where you can connect, learn, and feel less alone.",
-      "members": "{count} members",
-      "online": "{count} online",
+      "members": "{count, plural, one {{formatted} member} other {{formatted} members}}",
+      "online": "{formatted} online",
       "explore": "Explore community",
-      "items": {
-        "chronicPain": {
-          "name": "Chronic Pain",
-          "description": "A supportive space to share experiences, tips, and what helps, offered by people who get it."
-        },
-        "crohns": {
-          "name": "Crohn’s & IBD",
-          "description": "A welcoming community to talk about daily life, treatment experiences, and navigating ups and downs together."
-        },
-        "wellbeing": {
-          "name": "Mental Wellbeing",
-          "description": "A kind, understanding space to talk about the emotional side of living with a chronic condition."
-        }
-      }
+      "exploreLabel": "Explore the {name} community"
     },
     "safety": {
       "eyebrow": "Built with care",

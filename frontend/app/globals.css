@@ -16,6 +16,8 @@
   --color-sage-tint: #eeead6; /* icon circles */
   --color-olive-ink: #85856e; /* icon strokes */
   --color-online: #86a45f;
+  --color-leaf-dark: #52634d; /* logo */
+  --color-leaf-light: #94a184; /* logo */
 
   /* Warm accents */
   --color-gold: #7e6547; /* small caps labels */
