@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "title": "Sanad",
+    "description": "A calm peer-support community for people living with chronic conditions."
+  },
+  "common": {
+    "brand": "Sanad",
+    "joinShort": "Join",
+    "join": "Join the community",
+    "tryDemo": "Try the demo",
+    "signIn": "Sign in"
+  },
+  "landing": {
+    "nav": {
+      "label": "Main",
+      "communities": "Communities",
+      "stories": "Stories",
+      "howItWorks": "How it works",
+      "safety": "Safety center",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "memberPrompt": "Already a member? <link>Sign in</link>"
+    },
+    "hero": {
+      "badge": "A peer-support community",
+      "title": "You’re not alone on this journey.",
+      "subtitle": "Sanad is a calm space for people living with chronic conditions to share their stories, find others who understand, and get through the hard days together.",
+      "demoHint": "No sign-up, one click",
+      "readStories": "Read stories first",
+      "socialProof": "People sharing and listening every day.",
+      "imageAlt": "A woman with her eyes closed, resting peacefully among leaves under a warm sun",
+      "socialProofLabel": "Members of the Sanad community"
+    },
+    "howItWorks": {
+      "title": "A little support, in your own way",
+      "checkIn": {
+        "title": "Check in daily",
+        "body": "Say how you’re feeling in seconds. Private by default."
+      },
+      "share": {
+        "title": "Share your story",
+        "body": "Write about a hard stretch or a small win. Others respond with <em>I relate</em> or <em>Sending support</em>."
+      },
+      "circle": {
+        "title": "Find your circle",
+        "body": "Join communities around shared experiences and chat live with people who understand."
+      }
+    },
+    "stories": {
+      "eyebrow": "Stories worth sharing",
+      "title": "Real journeys, told by the people living them.",
+      "browseAll": "Browse all stories",
+      "readTime": "{minutes, plural, one {# min read} other {# min read}}",
+      "relate": "I relate · {count}",
+      "support": "Sending support · {count}",
+      "reactionsLabel": "{relate} people relate, {support} sent support"
+    },
+    "conversations": {
+      "title": "It helps to talk with someone who’s been there.",
+      "subtitle": "A place to share, to listen, and to feel understood.",
+      "imageAlt": "Two cups of tea on a sunlit wooden table beside a window"
+    },
+    "communities": {
+      "title": "Find your people",
+      "subtitle": "Explore welcoming communities built around shared experiences, where you can connect, learn, and feel less alone.",
+      "members": "{count, plural, one {{formatted} member} other {{formatted} members}}",
+      "online": "{formatted} online",
+      "explore": "Explore community",
+      "exploreLabel": "Explore the {name} community"
+    },
+    "safety": {
+      "eyebrow": "Built with care",
+      "title": "A safe space comes first.",
+      "subtitle": "Sanad is for peer support and shared experience. It never replaces your doctor.",
+      "penName": {
+        "title": "Go by a pen name",
+        "body": "Share without your real identity."
+      },
+      "experience": {
+        "title": "Experience, not prescriptions",
+        "body": "Stories are personal, never medical advice."
+      },
+      "report": {
+        "title": "Report and block",
+        "body": "Step away from anything that feels wrong."
+      },
+      "visibility": {
+        "title": "You control visibility",
+        "body": "Private, circle-only, or public."
+      }
+    },
+    "cta": {
+      "title": "You don’t have to do this alone.",
+      "subtitle": "Find understanding, one conversation at a time."
+    },
+    "footer": {
+      "tagline": "A place to feel understood.",
+      "label": "Footer",
+      "about": "About",
+      "guidelines": "Community guidelines",
+      "privacy": "Privacy",
+      "contact": "Contact",
+      "copyright": "© {year} Sanad. A portfolio project by Ahmed. Not a medical service."
+    }
+  }
+}
