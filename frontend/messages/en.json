@@ -102,5 +102,68 @@
       "contact": "Contact",
       "copyright": "© {year} Sanad. A portfolio project by Ahmed. Not a medical service."
     }
+  },
+  "auth": {
+    "backHome": "Back to home",
+    "footer": "Peer support, not medical advice.",
+    "imageAlt": "Two friends sitting close on a hillside, one resting her head on the other's shoulder",
+    "or": "or",
+    "google": "Continue with Google",
+    "demo": {
+      "label": "Try the demo",
+      "hint": "No sign-up needed",
+      "loading": "Opening the demo…"
+    },
+    "fields": {
+      "penName": {
+        "label": "Pen name",
+        "placeholder": "What should we call you?",
+        "hint": "Your real name can stay private."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "hint": "At least 12 characters",
+        "show": "Show password",
+        "hide": "Hide password"
+      }
+    },
+    "errors": {
+      "penNameRequired": "Choose a pen name.",
+      "penNameLength": "Pen names are 2 to 40 characters.",
+      "emailRequired": "Enter your email.",
+      "emailInvalid": "Enter a valid email, like you@example.com.",
+      "passwordRequired": "Enter your password.",
+      "passwordShort": "Use at least 12 characters.",
+      "passwordLong": "Use 128 characters or fewer.",
+      "EMAIL_TAKEN": "An account with this email already exists. <link>Sign in instead?</link>",
+      "INVALID_CREDENTIALS": "That email and password don't match. Check them and try again.",
+      "RATE_LIMITED": "Too many attempts. Please wait a minute and try again.",
+      "NETWORK_ERROR": "We couldn't reach Sanad. Check your connection and try again.",
+      "UNKNOWN_ERROR": "Something went wrong on our side. Please try again."
+    },
+    "signUp": {
+      "metaTitle": "Join Sanad",
+      "title": "Join the community",
+      "subtitle": "A place to share, listen, and feel understood.",
+      "divider": "or sign up with email",
+      "terms": "By joining, you agree to our <terms>Terms</terms> and <guidelines>Community guidelines</guidelines>.",
+      "submit": "Join the community",
+      "submitting": "Joining…",
+      "switch": "Already part of Sanad? <link>Sign in</link>"
+    },
+    "signIn": {
+      "metaTitle": "Sign in to Sanad",
+      "title": "Welcome back",
+      "subtitle": "It's good to see you again.",
+      "divider": "or sign in with email",
+      "forgot": "Forgot password?",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "switch": "New to Sanad? <link>Join the community</link>"
+    }
   }
 }

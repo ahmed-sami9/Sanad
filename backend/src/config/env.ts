@@ -4,7 +4,7 @@ import { z } from "zod";
 // Fail at startup, not mid-request, if config is missing.
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
-  PORT: z.coerce.number().int().positive().default(5000),
+  PORT: z.coerce.number().int().positive().default(5001),
   MONGODB_URI: z.string().min(1),
   CLIENT_ORIGIN: z.url(),
 });

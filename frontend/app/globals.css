@@ -5,6 +5,7 @@
   /* Surfaces */
   --color-background: #faf3ea;
   --color-surface: #fdf8f3;
+  --color-panel: #f3eade; /* sign-in/up panel: a touch darker than the page, like warmer paper */
   --color-border: #eadfd3;
   --color-cream: #f3e9d8;
 
@@ -16,6 +17,7 @@
   --color-sage-tint: #eeead6; /* icon circles */
   --color-olive-ink: #85856e; /* icon strokes */
   --color-online: #86a45f;
+  --color-danger: #9a4535; /* form errors: warm red-brown, 5.8:1 on the page */
   --color-leaf-dark: #52634d; /* logo */
   --color-leaf-light: #94a184; /* logo */
 
@@ -27,8 +29,8 @@
   --color-sun: #fdddaf;
 
   /* Text */
-  --color-ink: #3f352c; /* headlines */
-  --color-body: #5e5750; /* paragraphs */
+  --color-ink: #5a4636; /* headlines, wordmark: warm brown, not near-black */
+  --color-body: #6a5b4e; /* paragraphs */
   --color-muted: #756e67; /* meta, captions */
   --color-on-dark: #f4f1e8;
   --color-on-dark-muted: #cbd3be;
