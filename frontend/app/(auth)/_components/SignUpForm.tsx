@@ -2,18 +2,14 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { FormAlert } from "@/components/ui/FormAlert";
 import { PasswordField } from "@/components/ui/PasswordField";
 import { TextField } from "@/components/ui/TextField";
-import { ApiError } from "@/lib/api/client";
-import { signUp } from "@/lib/api/auth";
+import { useSignUp } from "@/hooks/auth/useSignUp";
 import { routes } from "@/lib/routes";
-import { safeNextPath } from "@/lib/safeNextPath";
 import { checkEmail, checkNewPassword, checkPenName, PEN_NAME_MAX, PASSWORD_MAX, type AuthErrorKey } from "@/lib/validation/auth";
-import { errorKeyFor, type ApiErrorKey } from "./errorKey";
 import { useFocusFirstError } from "./useFocusFirstError";
 
 type Field = "penName" | "email" | "password";
@@ -23,11 +19,9 @@ const linkStyles = "font-semibold text-ink underline underline-offset-4 hover:te
 
 export function SignUpForm() {
   const t = useTranslations("auth");
-  const router = useRouter();
+  const { submit, loading, errorKey: formError } = useSignUp();
   const [values, setValues] = useState({ penName: "", email: "", password: "" });
   const [errors, setErrors] = useState<FieldErrors>({});
-  const [formError, setFormError] = useState<ApiErrorKey | null>(null);
-  const [loading, setLoading] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const formRef = useFocusFirstError(attempt);
 
@@ -39,7 +33,6 @@ export function SignUpForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setFormError(null);
 
     const next: FieldErrors = {
       penName: checkPenName(values.penName) ?? undefined,
@@ -52,14 +45,7 @@ export function SignUpForm() {
       return;
     }
 
-    setLoading(true);
-    try {
-      await signUp({ penName: values.penName.trim(), email: values.email.trim(), password: values.password });
-      router.push(safeNextPath(new URLSearchParams(window.location.search).get("next"), routes.app));
-    } catch (err) {
-      setFormError(errorKeyFor(err instanceof ApiError ? err.code : null));
-      setLoading(false);
-    }
+    await submit({ penName: values.penName.trim(), email: values.email.trim(), password: values.password });
   }
 
   return (

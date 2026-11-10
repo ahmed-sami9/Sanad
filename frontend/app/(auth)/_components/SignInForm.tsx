@@ -2,18 +2,14 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { FormAlert } from "@/components/ui/FormAlert";
 import { PasswordField } from "@/components/ui/PasswordField";
 import { TextField } from "@/components/ui/TextField";
-import { ApiError } from "@/lib/api/client";
-import { signIn } from "@/lib/api/auth";
+import { useSignIn } from "@/hooks/auth/useSignIn";
 import { routes } from "@/lib/routes";
-import { safeNextPath } from "@/lib/safeNextPath";
 import { checkEmail, checkExistingPassword, type AuthErrorKey } from "@/lib/validation/auth";
-import { errorKeyFor, type ApiErrorKey } from "./errorKey";
 import { useFocusFirstError } from "./useFocusFirstError";
 
 type Field = "email" | "password";
@@ -21,11 +17,9 @@ type FieldErrors = Partial<Record<Field, AuthErrorKey>>;
 
 export function SignInForm() {
   const t = useTranslations("auth");
-  const router = useRouter();
+  const { submit, loading, errorKey: formError } = useSignIn();
   const [values, setValues] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState<FieldErrors>({});
-  const [formError, setFormError] = useState<ApiErrorKey | null>(null);
-  const [loading, setLoading] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const formRef = useFocusFirstError(attempt);
 
@@ -36,7 +30,6 @@ export function SignInForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setFormError(null);
 
     // Sign-in only checks that something sensible was typed; password rules are a sign-up concern.
     const next: FieldErrors = {
@@ -49,14 +42,7 @@ export function SignInForm() {
       return;
     }
 
-    setLoading(true);
-    try {
-      await signIn({ email: values.email.trim(), password: values.password });
-      router.push(safeNextPath(new URLSearchParams(window.location.search).get("next"), routes.app));
-    } catch (err) {
-      setFormError(errorKeyFor(err instanceof ApiError ? err.code : null));
-      setLoading(false);
-    }
+    await submit({ email: values.email.trim(), password: values.password });
   }
 
   return (
