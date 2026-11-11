@@ -13,6 +13,10 @@ export type SignUpInput = {
   password: string;
 };
 
+export type GoogleSignUpInput = {
+  penName: string;
+};
+
 export type SignInInput = {
   email: string;
   password: string;

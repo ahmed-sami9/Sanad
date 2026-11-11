@@ -14,3 +14,6 @@ authRoutes.post("/sign-in", credentialsLimit, controller.signIn);
 authRoutes.post("/demo", demoLimit, controller.startDemo);
 authRoutes.get("/me", requireAuth, controller.me);
 authRoutes.post("/sign-out", controller.signOut);
+authRoutes.get("/google", controller.googleStart);
+authRoutes.get("/google/callback", controller.googleCallback);
+authRoutes.post("/google/complete", credentialsLimit, controller.googleComplete);

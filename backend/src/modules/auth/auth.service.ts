@@ -33,7 +33,7 @@ function toAuthUser(user: UserRecord): AuthUser {
   };
 }
 
-async function startSession(user: UserRecord): Promise<AuthResult> {
+export async function startSession(user: UserRecord): Promise<AuthResult> {
   // A demo session ends with its user, so the cookie never outlives the account.
   const expiresAt = user.expiresAt ?? new Date(Date.now() + SESSION_TTL_MS);
   const sessionId = await repo.createSession(user._id, expiresAt);

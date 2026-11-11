@@ -1,4 +1,4 @@
-import type { AuthUser, SignInInput, SignUpInput } from "@/types/auth";
+import type { AuthUser, GoogleSignUpInput, SignInInput, SignUpInput } from "@/types/auth";
 import { apiRequest } from "./client";
 
 // The contract the auth module on the backend implements. The session lives in an httpOnly cookie
@@ -30,6 +30,13 @@ export function signOut() {
 }
 
 // GET /auth/google → a full-page redirect: the backend sends the browser to Google and back.
+// Afterwards the backend redirects to /home, to /choose-pen-name (first time), or to /sign-in?error=CODE.
 export function googleAuthUrl() {
   return `${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/google`;
+}
+
+// POST /auth/google/complete → finishes a first Google sign-up with the chosen pen name (sets the cookie).
+// Errors: GOOGLE_SIGNUP_EXPIRED (the 15-minute window passed), EMAIL_TAKEN.
+export function completeGoogleSignUp(input: GoogleSignUpInput) {
+  return apiRequest<{ user: AuthUser }>("/auth/google/complete", { method: "POST", body: JSON.stringify(input) });
 }

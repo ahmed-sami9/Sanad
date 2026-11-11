@@ -9,6 +9,10 @@ const envSchema = z.object({
   CLIENT_ORIGIN: z.url(),
   // Signs session tokens; anyone holding it can forge a sign-in, so it must be long and secret.
   JWT_SECRET: z.string().min(32, "JWT_SECRET must be at least 32 characters"),
+  GOOGLE_CLIENT_ID: z.string().min(1),
+  GOOGLE_CLIENT_SECRET: z.string().min(1),
+  // Must match a redirect URI registered on the Google client exactly.
+  GOOGLE_CALLBACK_URL: z.url(),
 });
 
 const parsed = envSchema.safeParse(process.env);

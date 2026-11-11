@@ -2,6 +2,7 @@ import { after, before, beforeEach, describe, test } from "node:test";
 import assert from "node:assert/strict";
 import request from "supertest";
 import { app } from "../../app";
+import { cookieFrom } from "../../test/cookies";
 import { connectTestDB, disconnectTestDB, resetTestDB } from "../../test/db";
 import { User } from "../users/user.model";
 import { Session } from "./session.model";
@@ -10,13 +11,7 @@ import { SESSION_COOKIE } from "./auth.tokens";
 const api = request(app);
 const maya = { penName: "Maya", email: "maya@example.com", password: "a-long-calm-password" };
 
-// Returns "sanad_session=<token>" from a response, ready to send back as a Cookie header.
-function sessionCookie(res: request.Response): string {
-  const cookies = res.get("Set-Cookie") ?? [];
-  const cookie = cookies.find((c) => c.startsWith(`${SESSION_COOKIE}=`));
-  assert.ok(cookie, "expected a session cookie");
-  return cookie.split(";")[0];
-}
+const sessionCookie = (res: request.Response) => cookieFrom(res, SESSION_COOKIE);
 
 before(connectTestDB);
 beforeEach(resetTestDB);

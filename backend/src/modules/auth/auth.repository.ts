@@ -7,6 +7,8 @@ type NewUser = {
   penName: string;
   email?: string;
   passwordHash?: string;
+  googleId?: string;
+  emailVerifiedAt?: Date;
   isDemo?: boolean;
   expiresAt?: Date;
 };
@@ -24,6 +26,27 @@ export async function createUser(data: NewUser): Promise<UserRecord> {
 
 export function findUserByEmailWithPassword(email: string) {
   return User.findOne({ email }).select("+passwordHash").lean<UserRecord>();
+}
+
+export function findUserByGoogleId(googleId: string) {
+  return User.findOne({ googleId }).lean<UserRecord>();
+}
+
+export function findUserByEmail(email: string) {
+  return User.findOne({ email }).lean<UserRecord>();
+}
+
+// Attaches a Google account to an existing user. The filter makes it a no-op (null) if another Google id got there first.
+export function linkGoogleAccount(userId: Types.ObjectId, googleId: string, removePassword: boolean) {
+  return User.findOneAndUpdate(
+    { _id: userId, googleId: { $exists: false } },
+    { $set: { googleId, emailVerifiedAt: new Date() }, ...(removePassword && { $unset: { passwordHash: 1 } }) },
+    { new: true },
+  ).lean<UserRecord>();
+}
+
+export async function deleteSessionsForUser(userId: Types.ObjectId): Promise<void> {
+  await Session.deleteMany({ userId });
 }
 
 export function findUserById(id: string) {

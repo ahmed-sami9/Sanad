@@ -143,7 +143,10 @@
       "INVALID_CREDENTIALS": "That email and password don't match. Check them and try again.",
       "RATE_LIMITED": "Too many attempts. Please wait a minute and try again.",
       "NETWORK_ERROR": "We couldn't reach Sanad. Check your connection and try again.",
-      "UNKNOWN_ERROR": "Something went wrong on our side. Please try again."
+      "UNKNOWN_ERROR": "Something went wrong on our side. Please try again.",
+      "GOOGLE_FAILED": "Google sign-in didn't go through. Please try again.",
+      "GOOGLE_EMAIL_IN_USE": "This email is already linked to a different Google account. Sign in with that account, or with your email and password.",
+      "GOOGLE_SIGNUP_EXPIRED": "Your Google sign-up timed out. <link>Start again</link>"
     },
     "signUp": {
       "metaTitle": "Join Sanad",
@@ -164,6 +167,14 @@
       "submit": "Sign in",
       "submitting": "Signing in…",
       "switch": "New to Sanad? <link>Join the community</link>"
+    },
+    "choosePenName": {
+      "metaTitle": "Choose your pen name",
+      "title": "One last step",
+      "subtitle": "Choose the name others in Sanad will know you by.",
+      "submit": "Continue",
+      "submitting": "Saving…",
+      "switch": "Changed your mind? <link>Back to sign in</link>"
     }
   }
 }

@@ -1,6 +1,8 @@
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
+import { AuthPanel } from "./AuthPanel";
 import { GoogleButton } from "./GoogleButton";
+import { GoogleErrorAlert } from "./GoogleErrorAlert";
 import { DemoButton } from "./DemoButton";
 
 type AuthCardProps = {
@@ -11,19 +13,16 @@ type AuthCardProps = {
   footer: ReactNode;
 };
 
-// The shared skeleton of both pages: heading, Google, divider, the form, the demo option, and the switch link.
-// On wider screens it sits in a tonal panel (slightly darker than the page, no shadow) so the form feels grounded.
-// Inside the panel "muted" text is swapped for the body colour: plain muted grey drops below 4.5:1 contrast on the darker panel.
+// The shared skeleton of sign-in and sign-up: heading, Google, divider, the form, the demo option, and the switch link.
 export async function AuthCard({ title, subtitle, divider, form, footer }: AuthCardProps) {
   const t = await getTranslations("auth");
 
   return (
-    <div className="flex flex-col gap-6 lg:rounded-[2rem] lg:border lg:border-border lg:bg-panel lg:p-10 lg:[--color-muted:var(--color-body)]">
-      <div className="flex flex-col gap-2">
-        {/* Slightly smaller inside the panel so "Join the community" stays on one line. */}
-        <h1 className="font-serif text-4xl leading-tight sm:text-5xl lg:text-[2.625rem]">{title}</h1>
-        <p className="text-lg">{subtitle}</p>
-      </div>
+    <AuthPanel title={title} subtitle={subtitle}>
+      {/* Reads ?error= from the URL, which only exists in the browser; Suspense keeps the rest of the page static. */}
+      <Suspense fallback={null}>
+        <GoogleErrorAlert />
+      </Suspense>
 
       <GoogleButton label={t("google")} />
 
@@ -44,6 +43,6 @@ export async function AuthCard({ title, subtitle, divider, form, footer }: AuthC
       <DemoButton />
 
       <p className="text-center text-[15px]">{footer}</p>
-    </div>
+    </AuthPanel>
   );
 }
